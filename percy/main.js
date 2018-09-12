@@ -3,6 +3,11 @@ var app = new Vue({
   data: {
     counters: [0, 0, 0, 0]
   },
+  methods: {
+    increment: function(counterIndex) {
+      this.counters[counterIndex]++;
+    }
+  },
   computed: {
     total: function() {
       return 0;
