@@ -5,7 +5,8 @@ var app = new Vue({
   },
   methods: {
     increment: function(counterIndex) {
-      this.counters[counterIndex]++;
+      let newVal = this.counters[counterIndex] + 1;
+      this.counters.splice(counterIndex, 1, newVal);
     }
   },
   computed: {
