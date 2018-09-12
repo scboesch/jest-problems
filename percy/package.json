@@ -1,0 +1,10 @@
+{
+  "name": "percy-jackson-quest-html",
+  "version": "1.0.0",
+  "description": "Simple html stater project with no dependencies",
+  "main": "index.html",
+  "dependencies": {
+    "vue": "2.5.17"
+  },
+  "keywords": []
+}
