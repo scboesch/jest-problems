@@ -2,7 +2,12 @@ var app = new Vue({
   el: "#app",
   data: {
     counters: [0, 0, 0, 0],
-    imageUrls: ["", "", "", ""]
+    imageUrls: [
+      "https://github.com/scboesch/jest-problems/raw/master/percy/images/Annabeth.png",
+      "https://github.com/scboesch/jest-problems/raw/master/percy/images/Pan.png",
+      "https://github.com/scboesch/jest-problems/raw/master/percy/images/Percy.jpg",
+      "https://github.com/scboesch/jest-problems/raw/master/percy/images/Thalia.png"
+    ]
   },
   methods: {
     increment: function(counterIndex) {

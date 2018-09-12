@@ -6,19 +6,14 @@
   <body>
 	  <div id="app">
 			<h3>Who should go on the quest?</h3>
-			<img @click="increment(0)" height="80" src="https://i.pinimg.com/236x/7a/cf/38/7acf38a40838fb09c83f3c440321f5ce--icons-kiss.jpg"></img>
-			{{counters[0]}}
-			<br>
-			<img @click="increment(1)" height="80" src="http://images6.fanpop.com/image/photos/38800000/Annabeth-Chase-icons-annabeth-chase-38812405-245-245.png"></img>
-			 {{counters[1]}}
-			<br>
-			<img @click="increment(2)" height="80" src="https://78.media.tumblr.com/c0870d2bce5a4db4e754ff521dbd282c/tumblr_oll9u4nK0E1vhvwnho1_400.png"></img>
-			 {{counters[2]}}
-			<br>
-			<img @click="increment(3)" height="80" src="http://images6.fanpop.com/image/photos/38800000/Thalia-Grace-Icons-percy-jackson-and-the-olympians-38803110-245-245.png"></img>
-			 {{counters[3]}}
-			<br>
-			<b> Total {{total}} </b> 
+			<div v-for="(x,index) in imageUrls">
+				<img @click="increment(index)" 
+					height="80" 
+					v-bind:src="imageUrls[index]">
+				</img>
+				{{counters[index]}}
+			</div>
+			<b> Total {{total}}</b>
 	  </div>
 
 	<script src="https://unpkg.com/vue"></script>
