@@ -12,4 +12,8 @@ describe("Vue component tests", () => {
   it("App should have an array of 4 counters.", () => {
     expect(App.counters).toEqual([0, 0, 0, 0]);
   });
+
+  it("Total should be the sum of all counters values.", () => {
+    expect(App.total).toEqual(0);
+  });
 });
