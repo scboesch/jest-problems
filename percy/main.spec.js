@@ -36,4 +36,15 @@ describe("Vue component tests", () => {
   it("App should have an array of imageUrls.", () => {
     expect(App.imageUrls).toBeInstanceOf(Array);
   });
+
+  it("App should have a reset method to reset counters.", () => {
+    expect(App.counters[0]).toEqual(0);
+    expect(App.total).toEqual(0);
+    App.increment(0); // increment counter 0
+    App.increment(1); // increment counter 1
+    expect(App.total).toEqual(2);
+    App.resetCounters();
+    expect(App.counters).toEqual([0, 0, 0, 0]);
+    expect(App.total).toEqual(0);
+  });
 });
