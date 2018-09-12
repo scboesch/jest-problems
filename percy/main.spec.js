@@ -16,4 +16,10 @@ describe("Vue component tests", () => {
   it("Total should be the sum of all counters values.", () => {
     expect(App.total).toEqual(0);
   });
+
+  it("The increment functions should increment a counter.", () => {
+    expect(App.counters[0]).toEqual(0);
+    App.increment(0);
+    expect(App.counters[0]).toEqual(1);
+  });
 });
