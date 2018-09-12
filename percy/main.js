@@ -11,7 +11,7 @@ var app = new Vue({
   },
   computed: {
     total: function() {
-      return 0;
+      return this.counters.reduce((a, b) => a + b, 0);
     }
   }
 });
