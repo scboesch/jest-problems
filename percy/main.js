@@ -13,6 +13,9 @@ var app = new Vue({
     increment: function(counterIndex) {
       let newVal = this.counters[counterIndex] + 1;
       this.counters.splice(counterIndex, 1, newVal);
+    },
+    resetCounters: function() {
+      this.counters = [0, 0, 0, 0];
     }
   },
   computed: {
