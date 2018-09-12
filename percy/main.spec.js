@@ -2,7 +2,9 @@ import Vue from "vue";
 import App from "./main";
 
 describe("Vue component tests", () => {
-  beforeEach(() => {});
+  beforeEach(() => {
+    App.counters = [0, 0, 0, 0];
+  });
   afterEach(() => {});
 
   it("App should be an instance of Vue.", () => {
@@ -21,5 +23,13 @@ describe("Vue component tests", () => {
     expect(App.counters[0]).toEqual(0);
     App.increment(0);
     expect(App.counters[0]).toEqual(1);
+  });
+
+  it("The total should increase when individual counters increase.", () => {
+    expect(App.counters[0]).toEqual(0);
+    expect(App.total).toEqual(0);
+    App.increment(0); // increment counter 0
+    App.increment(1); // increment counter 1
+    expect(App.total).toEqual(4);
   });
 });
