@@ -30,6 +30,6 @@ describe("Vue component tests", () => {
     expect(App.total).toEqual(0);
     App.increment(0); // increment counter 0
     App.increment(1); // increment counter 1
-    expect(App.total).toEqual(4);
+    expect(App.total).toEqual(2);
   });
 });
