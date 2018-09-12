@@ -1,2 +1,2 @@
-var app = new Vue({});
+//var app = new Vue({});
 export default app;

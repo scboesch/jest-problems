@@ -5,7 +5,7 @@ describe("Vue component tests", () => {
   beforeEach(() => {});
   afterEach(() => {});
 
-  it("There should be an array of counters.", () => {
+  it("App should be an instance of Vue.", () => {
     expect(App._isVue).toEqual(true);
   });
 });
