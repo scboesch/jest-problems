@@ -32,4 +32,8 @@ describe("Vue component tests", () => {
     App.increment(1); // increment counter 1
     expect(App.total).toEqual(2);
   });
+
+  it("App should have an array of imageUrls.", () => {
+    expect(App.imageUrls).toBeInstanceOf(Array);
+  });
 });
