@@ -1,11 +1,14 @@
 import Vue from "vue";
+import fetchMock from "fetch-mock";
 import App from "./main";
 
 describe("Vue component tests", () => {
   beforeEach(() => {
     App.counters = [0, 0, 0, 0];
   });
-  afterEach(() => {});
+  afterEach(() => {
+    fetchMock.restore();
+  });
 
   it("App should be an instance of Vue.", () => {
     expect(App._isVue).toEqual(true);
@@ -46,5 +49,11 @@ describe("Vue component tests", () => {
     App.resetCounters();
     expect(App.counters).toEqual([0, 0, 0, 0]);
     expect(App.total).toEqual(0);
+  });
+
+  it("fetchMock should mock fetches", async () => {
+    fetchMock.mock("http://example.com", 200);
+    const res = await fetch("http://example.com");
+    expect(res.ok).toEqual(true);
   });
 });

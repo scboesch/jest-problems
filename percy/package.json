@@ -4,6 +4,7 @@
   "description": "Simple html stater project with no dependencies",
   "main": "index.html",
   "dependencies": {
+    "fetch-mock": "7.0.0-alpha.6",
     "vue": "2.5.17"
   },
   "keywords": []
