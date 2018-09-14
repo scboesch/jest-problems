@@ -23,6 +23,9 @@ var app = new Vue({
     heroes: {}
   },
   methods: {
+    loadDefaults: function() {
+      this.heroes = this.defaults;
+    },
     increment: function(counterIndex) {
       let newVal = this.counters[counterIndex] + 1;
       this.counters.splice(counterIndex, 1, newVal);
