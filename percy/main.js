@@ -7,7 +7,8 @@ var app = new Vue({
       "https://github.com/scboesch/jest-problems/raw/master/percy/images/Pan.png",
       "https://github.com/scboesch/jest-problems/raw/master/percy/images/Percy.jpg",
       "https://github.com/scboesch/jest-problems/raw/master/percy/images/Thalia.png"
-    ]
+    ],
+    heroes: {}
   },
   methods: {
     increment: function(counterIndex) {
