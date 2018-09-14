@@ -51,6 +51,10 @@ describe("Vue component tests", () => {
     expect(App.total).toEqual(0);
   });
 
+  it("App should have a heroes object to store image urls and counters.", () => {
+    expect(App.heroes).toBeInstanceOf(Object);
+  });
+
   it("fetchMock should mock fetches", async () => {
     fetchMock.mock("http://example.com", 200);
     const res = await fetch("http://example.com");
