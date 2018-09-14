@@ -8,6 +8,18 @@ var app = new Vue({
       "https://github.com/scboesch/jest-problems/raw/master/percy/images/Percy.jpg",
       "https://github.com/scboesch/jest-problems/raw/master/percy/images/Thalia.png"
     ],
+    defaults: {
+      A: {
+        counter: 0,
+        imageUrl:
+          "https://github.com/scboesch/jest-problems/raw/master/percy/images/Annabeth.png"
+      },
+      B: {
+        counter: 0,
+        imageUrl:
+          "https://github.com/scboesch/jest-problems/raw/master/percy/images/Pan.png"
+      }
+    },
     heroes: {}
   },
   methods: {

@@ -55,6 +55,12 @@ describe("Vue component tests", () => {
     expect(App.heroes).toBeInstanceOf(Object);
   });
 
+  it("App should have the function loadDefaults to reset heroes to default values.", () => {
+    expect(App.heroes).toEqual({});
+    App.loadDefaults();
+    expect(App.heroes).toEqual(App.defaults);
+  });
+
   it("fetchMock should mock fetches", async () => {
     fetchMock.mock("http://example.com", 200);
     const res = await fetch("http://example.com");
