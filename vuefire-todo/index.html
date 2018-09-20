@@ -1,0 +1,50 @@
+<html>
+ <head>
+	<title>Plain HTML Sandbox</title>
+ </head>
+ <body>
+  <div id="app">
+    <h3>Check out our awesome service</h3>
+	  <input v-model.trim="newTodoText" @keyup.enter="addTodo" placeholder="Add new todo">
+    <button @click="addTodo">Add</button>
+    <ul>
+      <li v-for="todo in todos">
+        <input :value="todo.text" @input="updateTodoText(todo, $event.target.value)">
+        <button @click="removeTodo(todo)">X</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+	<script src="https://gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+  <script>
+    var db = firebase.initializeApp({
+        databaseURL: 'https://awesome-56c60.firebaseio.com'
+      }).database()
+      var todosRef = db.ref('todos')
+      new Vue({
+        el: '#app',
+        data: {
+          newTodoText: ''
+        },
+        firebase: {
+          todos: todosRef.limitToLast(25)
+        },
+        methods: {
+          addTodo: function () {
+            if (this.newTodoText) {
+              todosRef.push({ text: this.newTodoText})
+              this.newTodoText = ''
+            }
+          },
+          updateTodoText: function (todo, newText) {
+            todosRef.child(todo['.key']).child('text').set(newText)
+          },
+          removeTodo: function (todo) {
+            todosRef.child(todo['.key']).remove()
+          }
+        }
+      })
+  </script>
+ </body>
+</html>

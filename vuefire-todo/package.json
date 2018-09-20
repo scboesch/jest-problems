@@ -1,0 +1,8 @@
+{
+  "name": "vuefire-firebase-vue-todo-list",
+  "version": "1.0.0",
+  "description": "Single page persistent todo list in about 50-lines of code.",
+  "main": "index.html",
+  "dependencies": {},
+  "keywords": []
+}
